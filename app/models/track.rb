@@ -8,4 +8,5 @@ class Track < ApplicationRecord
     def upload?
       if audio_file.empty?
     end
+  end
 end
