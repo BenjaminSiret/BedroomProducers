@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   validates :username, presence: true, uniqueness: true
-  validates :email, format: { with: /\A.*@.*\.com\z/ },prensece: true ,uniqueness: true
+  validates :email, format: { with: /\A.*@.*\.com\z/ },presence: true ,uniqueness: true
   validates :password, presence: true, length: { minimum: 8 }
   validates :status, presence: true
   validates :description, presence: true
