@@ -1,4 +1,3 @@
 {
-  "solargraph.commandPath": "/home/benjaminsiret/.rbenv/shims/solargraph",
-  "ruby.rubocop.executePath": "/home/benjaminsiret/.rbenv/shims/rubocop"
+  "solargraph.commandPath": "/home/benjaminsiret/.rbenv/shims/solargraph"
 }
