@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @message.destroy
-  # end
+  def destroy
+    @message.destroy
+  end
 end
