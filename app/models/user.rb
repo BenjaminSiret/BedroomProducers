@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :tracks
   has_many :upvotes
   has_many :messages
-  has_one_attached :photo
+  has_one_attached :avatar
 
   # validates :username, presence: true, uniqueness: true
   validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ },presence: true ,uniqueness: true
