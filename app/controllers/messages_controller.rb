@@ -1,26 +1,21 @@
 class MessagesController < ApplicationController
-  def index
-    @messages = Message.all
-  end
-
-  def show
-    @message = Message.find(params[:id])
-  end
-
-  def new
-    @message = Message.new
-  end
 
   def create
-    @message = Message.new
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @message = Message.new(message_params)
+    @message.chatroom = @chatroom
+    @message.user = current_user
+
     if @message.save
-      redirect_to message_path(@message)
+      redirect_to chatroom_path(@chatroom, anchor: "message-#{message.id}")
     else
-      render :new
+      render "chatrooms/show"
     end
   end
 
-  def destroy
-    @message.destroy
+  private
+
+  def message_params
+    params.require(:message).permit(:content)
   end
 end
