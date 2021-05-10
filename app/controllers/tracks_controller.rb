@@ -42,5 +42,4 @@ class TracksController < ApplicationController
   def track_params
     params.require(:track).permit(:title, :description, :url, :audio_file)
   end
-
 end
