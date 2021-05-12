@@ -1,10 +1,11 @@
 class TracksController < ApplicationController
+  before_action :find_track, only: [ :show, :edit, :update, :destroy ]
+
   def index
     @tracks = Track.all
   end
 
   def show
-    @track = Track.find(params[:id])
   end
 
   def new
@@ -22,17 +23,14 @@ class TracksController < ApplicationController
   end
 
   def edit
-    @track = Track.find(params[:id])
   end
 
   def update
-    @track = Track.find(params[:id])
     @track.update(track_params)
     redirect_to track_path(@track)
   end
 
   def destroy
-    @track = Track.find(params[:id])
     @track.destroy
     redirect_to user_path(current_user)
   end
@@ -41,5 +39,9 @@ class TracksController < ApplicationController
 
   def track_params
     params.require(:track).permit(:title, :description, :url, :audio_file)
+  end
+
+  def find_track
+    @track = Track.find(params[:id])
   end
 end
