@@ -1,2 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h2>Populaires</h2>
+  <h2>Nouveautés</h2>
+
+  <p>Aujourd'hui</p>
+  <p>7 derniers jours</p>
+  <p>14 derniers jours</p>
+
+  <div class="information-container">
+    <div class="card-music">
+      <div class="information-card-music">
+        <%# btn favoris
+        display img musique
+        display nom de la musique
+        display nom de l'auteur de la musique
+        btn commenter
+        btn partager
+        btn chat vers l'auteur de la musique
+        btn play
+        btn vote %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-right-side">
+    <%# display search bar %>
+    <div class="information-card-right-side">
+      <h4>Les derniers songs de tes artistes favoris</h4>
+      <%# display les 3 derniers songs tes artistes du current user mis en favoris %>
+      <hr>
+      <h4>Les fans aiment aussi</h4>
+      <%# display les 4 derniers morceaux les plus populaires avec le plus de votes %>
+    </div>
+  </div>
+</div>
