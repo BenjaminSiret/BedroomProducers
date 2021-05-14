@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-12 col-md-3">
+    <div class="mb-3">
+      <%= link_to new_chatroom_path, class: "btn btn-primary" do %>
+        Create a chatroom
+      <% end %>
+    </div>
+
+    <% if @chatrooms.present? %>
+      <nav class="nav flex-column">
+        <% @chatrooms.each do |chatroom| %>
+          <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link chatroom-nav-link" %>
+        <% end %>
+      </nav>
+    <% else %>
+      <div class="text-muted">
+        The are no chatrooms
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col">
+    <div class="alert alert-primary">
+      <h4 class="alert-heading">
+        Welcome to the RailsChatTutorial!
+      </h4>
+
+      <p>
+        We need to talk.
+      </p>
+
+      <hr />
+
+      <p>
+        You can create or join a chatroom from the sidebar.
+      </p>
+    </div>
+</div>
